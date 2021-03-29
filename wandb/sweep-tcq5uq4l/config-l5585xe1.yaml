@@ -1,0 +1,16 @@
+wandb_version: 1
+
+activation:
+  value: leaky_relu
+batch_norm:
+  value: false
+batch_size:
+  value: 16
+data_aug:
+  value: false
+dropout:
+  value: 0.3
+filter_org:
+  value: 2
+n_filters:
+  value: 64

@@ -1,0 +1,32 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.0",
+    "heartbeatAt": "2021-03-29T14:22:41.347544",
+    "startedAt": "2021-03-29T14:22:36.272577",
+    "docker": null,
+    "gpu": "GeForce RTX 2060",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "--activation=leaky_relu",
+        "--batch_norm=False",
+        "--batch_size=16",
+        "--data_aug=False",
+        "--dropout=0.3",
+        "--filter_org=2",
+        "--n_filters=64"
+    ],
+    "state": "running",
+    "codePath": "train.py",
+    "program": "train.py",
+    "git": {
+        "remote": "https://github.com/neilghosh2000/CS6910_Assignment2.git",
+        "commit": "88907df87874cd3e4f0144c822b184f7eb5f162f"
+    },
+    "email": "neilghosh2000@hotmail.com",
+    "root": "C:/Users/neilg/PycharmProjects/CS6910_Assignment2",
+    "host": "LAPTOP-6V8SQP45",
+    "username": "neilg",
+    "executable": "c:\\users\\neilg\\appdata\\local\\programs\\python\\python37\\python.exe"
+}
