@@ -1,0 +1,20 @@
+program: train.py
+method: bayes
+metric:
+  goal: maximize
+  name: val_accuracy
+parameters:
+  data_aug:
+    values: [True, False]
+  batch_size:
+    values: [16, 32, 64]
+  n_filters:
+    values: [16, 32, 64]
+  filter_org:
+    values: [0.5, 1, 2]
+  dropout:
+    values: [0.2, 0.3, 0.4]
+  batch_norm:
+    values: [True, False]
+  activation:
+    values: ['relu', 'leaky_relu']
