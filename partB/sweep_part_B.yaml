@@ -1,0 +1,20 @@
+program: train_part_B.py
+method: bayes
+metric:
+  goal: maximize
+  name: val_accuracy
+parameters:
+  pre_trained_model:
+    values: ['InceptionV3']
+  data_aug:
+    values: [True, False]
+  batch_size:
+    values: [16, 32, 64]
+  final_dense:
+    values: [16, 32, 64]
+  final_dropout:
+    values: [0.2, 0.3, 0.4, 0.5]
+  batch_norm:
+    values: [True, False]
+  activation:
+    values: ['relu']
