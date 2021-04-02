@@ -4,17 +4,19 @@ metric:
   goal: maximize
   name: val_accuracy
 parameters:
-  pre_trained_model:
-    values: ['InceptionV3']
   data_aug:
     values: [True, False]
+  pre_trained_model:
+    values: ['InceptionV3','InceptionResNetV2','ResNet50','Xception']  
   batch_size:
     values: [16, 32, 64]
   final_dense:
-    values: [16, 32, 64]
+    values: [32, 64, 128]
   final_dropout:
     values: [0.2, 0.3, 0.4, 0.5]
+  k_freeze_percent:
+    values: [0.6,0.7,0.8,0.9,1]
   batch_norm:
     values: [True, False]
   activation:
-    values: ['relu']
+    values: ['relu','leaky_relu']
