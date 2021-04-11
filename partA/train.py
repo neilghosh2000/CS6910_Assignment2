@@ -28,8 +28,8 @@ default_parameters = dict(
 run = wandb.init(config=default_parameters, project="cs6910_assignment_2", entity="arnesh_neil")
 config = wandb.config
 
-image_size = (128,128)
-input_size = (128,128,3)
+image_size = (256,256)
+input_size = (256,256,3)
 batch_size = config.batch_size
 
 class_names = ['Amphibia', 'Animalia', 'Arachnida', 'Aves', 'Fungi',
@@ -44,6 +44,8 @@ if data_aug:
 else:
     train_gen = ImageDataGenerator(rescale=1./255, validation_split=0.1)
 
+test_gen = ImageDataGenerator(rescale=1./255, validation_split=0.1)
+
 train_ds = train_gen.flow_from_directory(
     directory='nature_12K/inaturalist_12K/train/',
     target_size=image_size,
@@ -51,7 +53,7 @@ train_ds = train_gen.flow_from_directory(
     batch_size=batch_size,
     class_mode="categorical",
     shuffle=True,
-    seed=42,
+    seed=64,
     subset="training")
 
 val_ds = train_gen.flow_from_directory(
@@ -61,26 +63,26 @@ val_ds = train_gen.flow_from_directory(
     batch_size=batch_size,
     class_mode="categorical",
     shuffle=True,
-    seed=42,
+    seed=64,
     subset="validation")
 
-test_ds = train_gen.flow_from_directory(
+test_ds = test_gen.flow_from_directory(
     directory='nature_12K/inaturalist_12K/val/',
     target_size=image_size,
     color_mode="rgb",
-    batch_size=batch_size,
+    batch_size=1,
     class_mode="categorical",
     shuffle=True,
-    seed=42)
+    seed=12)
 
-# plt.figure(figsize=(10, 10))
-# images, labels = val_ds.next()
-# for i in range(9):
-#     ax = plt.subplot(3, 3, i + 1)
-#     plt.imshow(images[i])
-#     plt.title(class_names[np.where(labels[i] == 1)[0][0]])
-#     plt.axis("off")
-# plt.show()
+plt.figure(figsize=(10, 10))
+images, labels = val_ds.next()
+for i in range(9):
+    ax = plt.subplot(3, 3, i + 1)
+    plt.imshow(images[i])
+    plt.title(class_names[np.where(labels[i] == 1)[0][0]])
+    plt.axis("off")
+plt.show()
 
 n_filters = config.n_filters
 kernel_size = (3, 3)
@@ -88,6 +90,7 @@ act_fun = config.activation
 filter_org = config.filter_org
 dropout = config.dropout
 batch_norm = config.batch_norm
+
 
 def create_model(n_filters, kernel_size, act_fun, dropout, filter_org, batch_norm):
 
@@ -115,7 +118,7 @@ def create_model(n_filters, kernel_size, act_fun, dropout, filter_org, batch_nor
             model.add(layers.BatchNormalization())
         model.add(layers.MaxPooling2D(pool_size=(2, 2)))
 
-    n_dense = 32
+    n_dense = 256
 
     model.add(layers.Flatten())
 
@@ -134,11 +137,12 @@ def create_model(n_filters, kernel_size, act_fun, dropout, filter_org, batch_nor
 
     return model
 
-
 model = create_model(n_filters, kernel_size, act_fun, dropout, filter_org, batch_norm)
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 history = model.fit(train_ds, validation_data=val_ds, epochs=10, callbacks=[WandbCallback()])
+
+test_loss, test_acc = model.evaluate(test_ds, verbose=2)
 
 # plt.plot(history.history['accuracy'], label='accuracy')
 # plt.plot(history.history['val_accuracy'], label = 'val_accuracy')
@@ -146,4 +150,3 @@ history = model.fit(train_ds, validation_data=val_ds, epochs=10, callbacks=[Wand
 # plt.ylabel('Accuracy')
 # plt.ylim([0, 1])
 # plt.legend(loc='lower right')
-
