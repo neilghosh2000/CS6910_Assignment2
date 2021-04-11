@@ -31,7 +31,7 @@ default_parameters = dict(
     )
 
 
-run = wandb.init(config= default_parameters,project="cs6910_Assignment2", entity="arneshbose1")
+run = wandb.init(config= default_parameters,project="CS6910_Assignment_2", entity="arnesh_neil")
 config = wandb.config
 
 image_size = (128,128)
@@ -97,8 +97,8 @@ def use_pretrained_model(pre_trained_model, batch_size, final_dense, final_dropo
     
     if activation == "relu":
         x = layers.Dense(final_dense, layers.ReLU())(x)
-    elif act_fun == "leaky_relu":
-        x = layers.Dense(n_dense, layers.LeakyReLU(alpha=0.1))(x)
+    elif activation == "leaky_relu":
+        x = layers.Dense(final_dense, layers.LeakyReLU(alpha=0.1))(x)
 
     if batch_norm:
         x = layers.BatchNormalization()(x)
