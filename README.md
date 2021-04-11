@@ -25,5 +25,12 @@ The weights of the best model - https://drive.google.com/drive/folders/1TGIzIxvR
 Best results for Part B - Training Accuracy = 0.6908, Train Loss = 0.9443, Validation Accuracy = 0.6326, Validation Loss = 1.377
 
 
+Part C
+
+1. The PartC.ipynb file has the detailed that I have used to do real time object identification using Yolov3.
+2. The folder also has the pre trained weights that I have used.
+3. The source of the weights is a GitHub repository that I have mentioned in the report.
+
+
 
 Link to wandb report - https://wandb.ai/arnesh_neil/CS6910_Assignment_2/reports/CS6910-Assignment-2-Report--Vmlldzo1NjgyNTI
