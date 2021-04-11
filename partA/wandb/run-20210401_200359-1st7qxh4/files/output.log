@@ -1,0 +1,7 @@
+Found 9000 images belonging to 10 classes.
+Found 999 images belonging to 10 classes.
+Found 2000 images belonging to 10 classes.
+Traceback (most recent call last):
+  File "C:/Users/neilg/PycharmProjects/DL/A2/partA/train1.py", line 84, in <module>
+    plt.imshow(images[i])
+IndexError: index 1 is out of bounds for axis 0 with size 1

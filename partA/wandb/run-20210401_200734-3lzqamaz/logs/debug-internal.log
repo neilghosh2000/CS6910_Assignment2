@@ -1,0 +1,30 @@
+2021-04-01 20:07:36,236 INFO    MainThread:23616 [internal.py:wandb_internal():91] W&B internal server running at pid: 23616, started at: 2021-04-01 20:07:36.230622
+2021-04-01 20:07:36,237 INFO    WriterThread:23616 [datastore.py:open_for_write():77] open: C:\Users\neilg\PycharmProjects\DL\A2\partA\wandb\run-20210401_200734-3lzqamaz\run-3lzqamaz.wandb
+2021-04-01 20:07:36,238 DEBUG   HandlerThread:23616 [handler.py:handle_request():101] handle_request: check_version
+2021-04-01 20:07:36,240 DEBUG   SenderThread:23616 [sender.py:send():122] send: header
+2021-04-01 20:07:36,240 DEBUG   SenderThread:23616 [sender.py:send():122] send: request
+2021-04-01 20:07:36,249 DEBUG   SenderThread:23616 [sender.py:send_request():131] send_request: check_version
+2021-04-01 20:07:36,421 DEBUG   SenderThread:23616 [sender.py:send():122] send: run
+2021-04-01 20:07:36,869 INFO    SenderThread:23616 [sender.py:_start_run_threads():599] run started: 3lzqamaz with start time 1617287854
+2021-04-01 20:07:36,869 DEBUG   SenderThread:23616 [sender.py:send():122] send: summary
+2021-04-01 20:07:36,869 DEBUG   HandlerThread:23616 [handler.py:handle_request():101] handle_request: run_start
+2021-04-01 20:07:36,870 INFO    SenderThread:23616 [sender.py:_save_file():730] saving file wandb-summary.json with policy end
+2021-04-01 20:07:39,094 DEBUG   HandlerThread:23616 [meta.py:__init__():34] meta init
+2021-04-01 20:07:39,095 DEBUG   HandlerThread:23616 [meta.py:__init__():48] meta init done
+2021-04-01 20:07:39,095 DEBUG   HandlerThread:23616 [meta.py:probe():190] probe
+2021-04-01 20:07:39,112 DEBUG   HandlerThread:23616 [meta.py:_setup_git():180] setup git
+2021-04-01 20:07:39,195 DEBUG   HandlerThread:23616 [meta.py:_setup_git():187] setup git done
+2021-04-01 20:07:39,195 DEBUG   HandlerThread:23616 [meta.py:_save_pip():52] save pip
+2021-04-01 20:07:39,196 DEBUG   HandlerThread:23616 [meta.py:_save_pip():66] save pip done
+2021-04-01 20:07:39,196 DEBUG   HandlerThread:23616 [meta.py:probe():231] probe done
+2021-04-01 20:07:39,200 DEBUG   SenderThread:23616 [sender.py:send():122] send: files
+2021-04-01 20:07:39,200 INFO    SenderThread:23616 [sender.py:_save_file():730] saving file wandb-metadata.json with policy now
+2021-04-01 20:07:39,206 DEBUG   HandlerThread:23616 [handler.py:handle_request():101] handle_request: status
+2021-04-01 20:07:39,206 DEBUG   SenderThread:23616 [sender.py:send():122] send: request
+2021-04-01 20:07:39,206 DEBUG   SenderThread:23616 [sender.py:send_request():131] send_request: status
+2021-04-01 20:07:42,906 DEBUG   SenderThread:23616 [sender.py:send():122] send: stats
+2021-04-01 20:07:44,726 DEBUG   HandlerThread:23616 [handler.py:handle_request():101] handle_request: shutdown
+2021-04-01 20:07:44,726 INFO    HandlerThread:23616 [handler.py:finish():532] shutting down handler
+2021-04-01 20:07:45,731 INFO    SenderThread:23616 [sender.py:finish():814] shutting down sender
+2021-04-01 20:07:45,731 INFO    WriterThread:23616 [datastore.py:close():258] close: C:\Users\neilg\PycharmProjects\DL\A2\partA\wandb\run-20210401_200734-3lzqamaz\run-3lzqamaz.wandb
+2021-04-01 20:07:47,754 INFO    MainThread:23616 [internal.py:handle_exit():78] Internal process exited

@@ -1,0 +1,24 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.0",
+    "heartbeatAt": "2021-04-01T14:34:04.526498",
+    "startedAt": "2021-04-01T14:33:59.777746",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "codePath": "A2\\partA\\train1.py",
+    "program": "C:/Users/neilg/PycharmProjects/DL/A2/partA/train1.py",
+    "git": {
+        "remote": null,
+        "commit": null
+    },
+    "email": "neilghosh2000@hotmail.com",
+    "root": "C:/Users/neilg/PycharmProjects/DL",
+    "host": "LAPTOP-6V8SQP45",
+    "username": "neilg",
+    "executable": "C:\\Users\\neilg\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+}

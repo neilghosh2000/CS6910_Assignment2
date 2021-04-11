@@ -1,0 +1,28 @@
+Found 9000 images belonging to 10 classes.
+Found 999 images belonging to 10 classes.
+Found 2000 images belonging to 10 classes.
+wandb: ERROR plotly is required to log interactive plots, install with: pip install plotly or convert the plot to an image with `wandb.Image(plt)`
+Traceback (most recent call last):
+  File "C:/Users/neilg/PycharmProjects/DL/A2/partA/train1.py", line 89, in <module>
+    wandb.log({"Sample Images from the Dataset": plt})
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\wandb_run.py", line 966, in log
+    self.history._row_add(data)
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\wandb_history.py", line 44, in _row_add
+    self._flush()
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\wandb_history.py", line 59, in _flush
+    self._callback(row=self._data, step=self._step)
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\wandb_run.py", line 733, in _history_callback
+    row, step, publish_step=not_using_tensorboard
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\interface\interface.py", line 211, in publish_history
+    data = data_types.history_dict_to_json(run, data, step=step)
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\data_types.py", line 1980, in history_dict_to_json
+    payload[key] = val_to_json(run, key, val, namespace=step)
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\data_types.py", line 2006, in val_to_json
+    val = Plotly.make_plot_media(val)
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\sdk\data_types.py", line 1930, in make_plot_media
+    val = util.matplotlib_to_plotly(val)
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\util.py", line 391, in matplotlib_to_plotly
+    required="plotly is required to log interactive plots, install with: pip install plotly or convert the plot to an image with `wandb.Image(plt)`",
+  File "C:\Users\neilg\AppData\Local\Programs\Python\Python37\lib\site-packages\wandb\util.py", line 170, in get_module
+    raise wandb.Error(required)
+wandb.errors.error.Error: plotly is required to log interactive plots, install with: pip install plotly or convert the plot to an image with `wandb.Image(plt)`
